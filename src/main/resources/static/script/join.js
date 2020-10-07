@@ -17,8 +17,8 @@ $(function() {
 					mail : mail
 				},
 				success : function(data) {
-					console.log(data.key);
 					key = data.key;
+					console.log(key);
 				}
 			});
 			alert("이메일을 확인하시기 바랍니다.");
@@ -37,4 +37,20 @@ $(function() {
 		}
 	});
 
+	$(".submit-btn").click(function submitCheck(){
+		if(isCertification==false){
+			alert("메일 인증이 완료되지 않았습니다.");
+			return false;
+		}else if($(".id").val()!="" && $(".pw").val()!="" && $(".mail").val()!=""){
+			if($(".pw").val()==$(".checkpw").val()){
+				alert("회원가입 성공 ! ");
+				true;
+			}else{
+				alert("비밀번호 확인이 다릅니다.");
+				return false;
+			}
+		}
+	});
+	
+	
 });

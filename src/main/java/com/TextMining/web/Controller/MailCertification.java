@@ -1,4 +1,4 @@
-package com.TextMining.web;
+package com.TextMining.web.Controller;
 
 import java.util.HashMap;
 import java.util.Map;
